@@ -27,10 +27,9 @@ const Navbar: React.FC<NavbarProps> = ({
                 className="
                   flex
                   flex-row
+                  justify-center
                   items-center
-                  justify-between
                   gap-3
-                  md:gap-0
                 "
               >
                 <Logo />

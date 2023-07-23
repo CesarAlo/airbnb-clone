@@ -39,13 +39,22 @@ const UserMenu: React.FC<UserMenuProps> = ({
   }, [currentUser, loginModal, rentModal]);
     
   return (
-    <div className="relative">
+    <div className="
+      relative
+      md:absolute
+      right-0
+      mx-auto
+      xl:px-20
+      md:px-10
+      sm:px-2
+      px-2"
+    >
       <div className="flex flex-row items-center gap-3">
         <div
           onClick={onRent}
           className="
               hidden
-              md:block
+              lg:block
               text-sm
               font-bold
               py-3
@@ -56,7 +65,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
               cursor-pointer
           "
         >
-              Airbnb your home
+          Airbnb your home
         </div>
         <div
           onClick={toggleOpen}
@@ -102,23 +111,23 @@ const UserMenu: React.FC<UserMenuProps> = ({
               {currentUser ? (
                 <>
                   <MenuItem
-                    onClick={() => router.push('/trips')}
-                    label="My trips"
+                    onClick={() => {router.push('/trips'); toggleOpen()}}
+                    label="Trips"
                   />
                   <MenuItem
-                    onClick={() => router.push('/favorites')}
-                    label="My favorites"
+                    onClick={() => {router.push('/favorites'); toggleOpen()}}
+                    label="Favorites"
                   />
                   <MenuItem
-                    onClick={() => router.push('/reservations')}
-                    label="My reservations"
+                    onClick={() => {router.push('/reservations'); toggleOpen()}}
+                    label="Reservations"
                   />
                   <MenuItem
-                    onClick={() => router.push('/properties')}
-                    label="My properties"
+                    onClick={() => {router.push('/properties'); toggleOpen()}}
+                    label="Properties"
                   />
                   <MenuItem
-                    onClick={rentModal.onOpen}
+                    onClick={() => {rentModal.onOpen(); toggleOpen()}}
                     label="Airbnb my home"
                   />
                   <hr />
